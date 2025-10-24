@@ -44,44 +44,43 @@ interface Event {
 // SubEvent background images mapping
 const subEventBackgrounds: { [key: string]: string } = {
   // NAVRAS
-  'Symphony': 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1920&q=80',
-  'Nrityanjali (Fusion Dance)': 'https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?w=1920&q=80',
-  'Sur Sangam (Music - a Universal Language)': 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=1920&q=80',
-  'Kitchen Geniuses': 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=80',
-  'ELAN: The Pulse Within (Western Dance Competition)': 'https://images.unsplash.com/photo-1535525153412-5a42439a210d?w=1920&q=80',
-  'नुक्कड़ नाटक (एक सामंजस्यपूर्ण राष्ट्र)': 'https://images.unsplash.com/photo-1503095396549-807759245b35?w=1920&q=80',
+  'Symphony': 'assets/Symphony.jpg',
+  'Sur Sangam (Music - a Universal Language)': 'assets/Sur_Sangam_Music_-_a_Universal_Language.jpg',
+  'Kitchen Geniuses': 'assets/Kitchen_Geniuses.jpg',
+  'ELAN: The Pulse Within (Western Dance Competition)': 'assets/elan.jpg',
+  'नुक्कड़ नाटक (एक सामंजस्यपूर्ण राष्ट्र)': 'assets/नुक्कड़_नाटक_एक_सामंजस्यपूर्ण_राष्ट्र.jpg',
 
   // WORDWEAVE
-  'TED Talk': 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1920&q=80',
-  'बातों - बातों में (हिन्दी पॉडकास्ट)': 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1920&q=80',
-  'Flights of Poetic Fantasy (Poetry Writing Competition)': 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1920&q=80',
-  'संस्कृत श्लोक गायन': 'https://images.unsplash.com/photo-1609234656388-0ff363383899?w=1920&q=80',
+  'TED Talk': 'assets/TED_Talk.jpg',
+  'बातों - बातों में (हिन्दी पॉडकास्ट)': 'assets/बातों_-_बातों_में_हिन्दी_पॉडकास्ट.jpg',
+  'Flights of Poetic Fantasy (Poetry Writing Competition)': 'assets/Flights_of_Poetic_Fantasy_Poetry_Writing_Competition.jpg',
+  'संस्कृत श्लोक गायन': 'assets/संस्कृत_श्लोक_गायन.jpg',
 
   // NAVRANG
-  'Reimagine and Recreate (Chitrashala Jr. A)': 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1920&q=80',
-  'Paper Montage (Chitrashala Jr. B)': 'https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?w=1920&q=80',
-  'Canvas Painting (Chitrashala Jr. C)': 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=1920&q=80',
-  'Indian Renaissance Impact (Aesthetic Moves Sr. A)': 'https://images.unsplash.com/photo-1578662996442-48f60103fc81?w=1920&q=80',
-  'Statuette (Aesthetic Moves Sr. B)': 'https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=1920&q=80',
-  'Impressionist Landscape (Aesthetic Moves Sr. C)': 'https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=1920&q=80',
-  'Aesthetical Expression (Aesthetic Moves Sr. D)': 'https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=1920&q=80',
+  'Reimagine and Recreate (Chitrashala Jr. A)': 'assets/Reimagine_and_Recreate_Chitrashala_Jr._A.jpg',
+  'Paper Montage (Chitrashala Jr. B)': 'assets/Paper_Montage_Chitrashala_Jr._B.jpg',
+  'Canvas Painting (Chitrashala Jr. C)': 'assets/Canvas_Painting_Chitrashala_Jr._C.jpg',
+  'Indian Renaissance Impact (Aesthetic Moves Sr. A)': 'assets/indian_rensiance.webp',
+  'Statuette (Aesthetic Moves Sr. B)': 'assets/Statuette_Aesthetic_Moves_Sr._B.jpg',
+  'Impressionist Landscape (Aesthetic Moves Sr. C)': 'assets/Impressionist_Landscape_Aesthetic_Moves_Sr._C.jpg',
+  'Aesthetical Expression (Aesthetic Moves Sr. D)': 'assets/Aesthetical_Expression_Aesthetic_Moves_Sr._D.jpg',
 
   // TECHNOLYMPICS
-  'GameCraft': 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=1920&q=80',
-  'Webolution': 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=1920&q=80',
-  'CrypteX': 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80',
-  'ChemCraft 3D': 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1920&q=80',
-  'Vista View': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80',
-  'Rube It Up!': 'https://images.unsplash.com/photo-1568952433726-3896e3881c65?w=1920&q=80',
-  'EcoInnovators': 'https://images.unsplash.com/photo-1569163139394-de4798aa62b6?w=1920&q=80',
-  'Reel Harmony': 'https://images.unsplash.com/photo-1535016120720-40c646be5580?w=1920&q=80',
-  'GameSpark': 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=1920&q=80',
-  'Top Coders': 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=1920&q=80',
-  'IQrypt (Science & Technology Quiz)': 'https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=1920&q=80',
+  'GameCraft': 'assets/GameCraft.jpg',
+  'Webolution': 'assets/Webolution.jpg',
+  'CrypteX': 'assets/CrypteX.jpg',
+  'ChemCraft 3D': 'assets/Chemcraft_3D.jpg',
+  'Vista View': 'assets/Vista_View.jpg',
+  'Rube It Up!': 'assets/Rub_It_Up!.jpg',
+  'EcoInnovators': 'assets/ecoinnovators.jpg',
+  'Reel Harmony': 'assets/Reel_Harmony.jpg',
+  'GameSpark': 'assets/GameSpark.jpg',
+  'Top Coders': 'assets/Top_Coders.jpg',
+  'IQrypt (Science & Technology Quiz)': 'assets/IQrypt_Science_&_Technology_Quiz.jpg',
 
   // AUREUS
-  'Bid Blitz': 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1920&q=80',
-  'Think Tank': 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1920&q=80',
+  'Bid Blitz': 'assets/Bid_Blitz.jpg',
+  'Think Tank': 'assets/Think_Tank.jpg',
 };
 
 // Events array - Add your event data here
