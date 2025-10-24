@@ -1454,8 +1454,8 @@ const EventWebsite: React.FC = () => {
   };
 
   const backgroundImage = selectedEvent
-    ? subEventBackgrounds[selectedEvent.name] || 'https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=1920&q=80'
-    : 'https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=1920&q=80';
+  ? subEventBackgrounds[selectedEvent.name] || 'assets/default.jpg'
+  : 'assets/default.jpg';
 
   return (
     <>
