@@ -1460,7 +1460,6 @@ const EventWebsite: React.FC = () => {
 
   return (
     <>
-      {/* Loading Screen */}
       <div className={`loading-screen ${!isLoading ? 'fade-out' : ''}`}>
         <div className="loader-container">
           <div className="loader"></div>
@@ -1468,7 +1467,6 @@ const EventWebsite: React.FC = () => {
       </div>
 
       <div className="min-h-screen main-container">
-        {/* Dynamic Background */}
         <div className="fixed inset-0 z-0">
           <div
             className="absolute inset-0 bg-cover bg-center transition-all duration-1000"
@@ -1477,7 +1475,6 @@ const EventWebsite: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-overlay"></div>
         </div>
 
-        {/* Hamburger Menu Button (Mobile) */}
         {isMobile && (
           <button
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -1490,8 +1487,6 @@ const EventWebsite: React.FC = () => {
             </div>
           </button>
         )}
-
-        {/* Main Content Area */}
         <div className={`content-wrapper ${!isMobile ? 'with-sidebar' : ''}`}>
           {selectedEvent ? (
             <EventDetails event={selectedEvent} />
@@ -1503,15 +1498,20 @@ const EventWebsite: React.FC = () => {
                 <p className="hero-description">
                   One World • One Family • One Future
                 </p>
-                <div className="hero-cta">
+                <button
+                  className="hero-cta"
+                  onClick={() => setIsSidebarOpen(true)}
+                >
                   <span>Select an event to begin</span>
-                </div>
+                  <svg className="cta-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
               </div>
             </div>
           )}
         </div>
 
-        {/* Floating Glassmorphic Sidebar */}
         <div className={`sidebar ${isSidebarOpen ? 'sidebar-open' : ''}`}>
           <div className="sidebar-inner">
             <div className="sidebar-header">
@@ -1788,8 +1788,11 @@ body {
   text-transform: uppercase;
 }
 
+/* Update hero-cta styles */
 .hero-cta {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 0.85rem;
   color: #000;
   padding: 0.8rem 1.8rem;
@@ -1797,6 +1800,9 @@ body {
   border-radius: 6px;
   font-weight: 600;
   transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  position: relative;
 }
 
 .hero-cta:hover {
@@ -1804,10 +1810,30 @@ body {
   box-shadow: 0 5px 20px rgba(0, 255, 136, 0.3);
 }
 
+.hero-cta:active {
+  transform: translateY(-1px);
+}
+
+.cta-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.hero-cta:hover .cta-arrow {
+  transform: translateX(3px);
+}
+
 /* Hamburger Button */
+
+/* Hamburger button positioning and appearance */
+/* Hamburger button positioning and appearance */
 .hamburger-btn {
-  width: 36px;
-  height: 36px;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1816,52 +1842,74 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  z-index: 50;
+  padding: 0;
 }
 
 .hamburger-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
   border-color: #00ff88;
-  transform: translateY(-1px);
 }
 
+/* Hamburger lines container */
 .hamburger {
-  width: 18px;
-  height: 14px;
+  width: 24px;
+  height: 20px;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: block;
 }
 
+/* Hamburger lines */
 .hamburger span {
-  width: 100%;
-  height: 2px;
-  background: #ffffff;
-  border-radius: 2px;
-  transition: all 0.3s ease;
+  display: block;
   position: absolute;
+  width: 24px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 3px;
+  left: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease, top 0.3s ease, bottom 0.3s ease;
 }
 
-.hamburger span:nth-child(1) { top: 0; }
-.hamburger span:nth-child(2) { top: 50%; transform: translateY(-50%); }
-.hamburger span:nth-child(3) { bottom: 0; }
+/* Position the three lines */
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger span:nth-child(3) {
+  bottom: 0;
+}
+
+/* When active (sidebar open) - transform to X */
+.hamburger.active span {
+  background: #00ff88; /* Optional: change color when active */
+}
 
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg);
   top: 50%;
-  margin-top: -1px;
+  transform: translateY(-50%) rotate(45deg);
 }
 
 .hamburger.active span:nth-child(2) {
   opacity: 0;
+  transform: translateY(-50%) scale(0);
 }
 
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg);
   bottom: 50%;
-  margin-bottom: -1px;
+  transform: translateY(50%) rotate(-45deg);
 }
 
+/* Optional: Add rotation to the button itself */
+.hamburger-btn:active {
+  transform: scale(0.95);
+}
 /* Sidebar */
 .sidebar {
   position: fixed;
@@ -1981,7 +2029,7 @@ body {
   background: transparent;
   border: none;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 0.67rem;
+  font-size: 0.60rem;
   text-align: left;
   cursor: pointer;
   transition: all 0.2s ease;
