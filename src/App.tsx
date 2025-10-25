@@ -409,7 +409,7 @@ const Events: Event[] = [
           ],
           student: [
             { name: "Deepika Rawat" },
-            { name: "Aarush Verma" }
+            { name: "Aarush Varma" }
           ]
         },
         registration: {
